@@ -88,6 +88,9 @@ def find_top_competitors(wcif):
                 pb_type = pb.get("type")
                 wr = pb.get("worldRanking", float('inf'))
                 nr = pb.get("nationalRanking", float('inf'))
+                best = pb.get("best", 0)
+                if best == 0 or wr == 0 or nr == 0:
+                    continue
                 rank_type = None
                 ranking_value = None
                 qualifier = None
